@@ -40,8 +40,6 @@
 .blog-card-text4 {
   text-decoration: underline;
 }
-
-
 @media(max-width: 991px) {
   .blog-card-blog-card {
     max-width: 550px;
@@ -50,12 +48,6 @@
 @media(max-width: 767px) {
   .blog-card-blog-card {
     max-width: 450px;
-  }
-  .blog-card-root-class-name {
-    margin-bottom: var(--dl-space-space-twounits);
-  }
-  .blog-card-root-class-name1 {
-    margin-bottom: var(--dl-space-space-twounits);
   }
 }
 @media(max-width: 479px) {
