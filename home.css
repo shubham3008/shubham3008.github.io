@@ -202,9 +202,21 @@
   font-weight: 700;
 }
 .home-banner {
+  align-items: center;
+  padding-top: 28px;
+  flex-direction: row;
+  padding-bottom: 53px;
+  justify-content: center;
   background-color: var(--dl-color-scheme-brown);
 }
+.home-image {
+  width: 351px;
+  height: 384px;
+  align-self: center;
+  object-fit: cover;
+}
 .home-max-width2 {
+  align-self: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
