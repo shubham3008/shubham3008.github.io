@@ -25,6 +25,8 @@
   justify-content: center;
 }
 .download-text {
+
+  font-family:verdana;
   width: 1272px;
   font-size: 4em;
   text-align: center;
@@ -53,14 +55,20 @@
 }
 .download-navlink {
   font-size: 32px;
+  font-family: verdana;
+
   text-decoration: none;
 }
 .download-navlink1 {
+
+  font-family: verdana;
   font-size: 32px;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;
 }
 .download-navlink2 {
+
+  font-family: verdana;
   font-size: 32px;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;
@@ -209,7 +217,7 @@
   text-decoration: none;
 }
 .download-about {
-  height: 803px;
+  /* height: 803px; */
   padding-top: var(--dl-space-space-threeunits);
   padding-bottom: var(--dl-space-space-threeunits);
   background-color: var(--dl-color-scheme-lightbrown);
@@ -240,7 +248,7 @@
 }
 .download-text11 {
   font-size: 26px;
-  margin-top: var(--dl-space-space-threeunits);
+  /* margin-top: var(--dl-space-space-threeunits); */
   text-align: justify;
   line-height: 1.5;
   margin-left: var(--dl-space-space-threeunits);

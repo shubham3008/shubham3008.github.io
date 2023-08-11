@@ -42,10 +42,47 @@
       .services-card:hover > div{
       background-color: #fff
       }
+
+      .scroll-indicator {
+            position: fixed;
+            bottom: 5%;
+            right:1.5%;
+            /* transform: translateX(-50%); */
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.05s;
+            z-index:10;
+        }
+          
+        
+        .scroll-indicator.hidden {
+            opacity: 0;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+            color:Red;
+        }
+        
+        .scroll-indicator i {
+            display: block;
+            font-size: 24px;
+            color: gray;
+            margin-bottom: 5px;
+        }
+
     </style>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="scrollIndicator" class="scroll-indicator">
+      <span>&#8964; </span>
+      <span>Scroll To</span>
+      <span>Download</span>
+    </div>
+
     <div>
       <link href="./download.css" rel="stylesheet" />
 
@@ -150,27 +187,7 @@
             </div>
           </header>
         </div>
-        <div class="download-banner section-container">
-          <img
-            alt="image"
-            src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/57ae3e5c-dbeb-4b19-ab59-7a4d2bd73a2e/4ea8819e-69c8-41d5-a3d1-973630c2a87d?org_if_sml=124386"
-            class="download-image1"
-          />
-          <div class="download-max-width1 max-content-container">
-            <h2 class="download-text08 Heading2">Download Dataset</h2>
-            <span class="download-text09">
-              Access the following link to get access to our dataset
-            </span>
-            <a
-              href="https://drive.google.com/drive/folders/1sNwuh1W0TjPtZNfltjGJ88kvnK5godxL"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="download-primary button-lg button-secondary-white button"
-            >
-              Download
-            </a>
-          </div>
-        </div>
+        
         <div class="download-about section-container">
           <div class="download-max-width2 max-content-container">
             <div class="download-text-container">
@@ -179,7 +196,7 @@
           </div>
           <span class="download-text11">
             <span class="download-text12">
-              We would like to recognize and express our appreciation for the
+              We recognize and express our appreciation for the
               contributions made by various researchers and authors whose work
               has greatly influenced the data used on this website. The
               information presented here has been instrumental in advancing
@@ -201,9 +218,68 @@
             <br />
           </span>
         </div>
+        <div class="download-banner section-container">
+          <img
+            alt="image"
+            src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/57ae3e5c-dbeb-4b19-ab59-7a4d2bd73a2e/4ea8819e-69c8-41d5-a3d1-973630c2a87d?org_if_sml=124386"
+            class="download-image1"
+          />
+          <div class="download-max-width1 max-content-container">
+            <h2 class="download-text08 Heading2">Download Sample Dataset</h2>
+            <span class="download-text09">
+              Access the following link to get access to our dataset
+            </span>
+            <a
+              href="https://drive.google.com/drive/folders/1sNwuh1W0TjPtZNfltjGJ88kvnK5godxL"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="download-primary button-lg button-secondary-white button"
+            >
+              Download
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fuelux/2.6.6/all.min.js"></script>
+    <script>
+        // Get the scroll indicator element
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        
+        // Function to handle scroll event
+        function handleScroll() {
+            // Calculate the scroll position
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            
+            // Calculate the height of the viewport
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            // Calculate the height of the document
+            const documentHeight = Math.max(
+                document.body.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.clientHeight,
+                document.documentElement.scrollHeight,
+                document.documentElement.offsetHeight
+            );
+            
+            // Calculate the scroll position to trigger hiding the indicator
+            const hidePosition = documentHeight - viewportHeight;
+            
+            // Hide the scroll indicator if the user has scrolled down completely
+            if (scrollPosition >= hidePosition) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        }
+        
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
     <script>
       window.onload = () => {
         const runAllScripts = () => {

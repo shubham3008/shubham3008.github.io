@@ -34,6 +34,7 @@
   justify-content: center;
 }
 .home-text {
+  font-family:verdana;
   width: 1272px;
   font-size: 4em;
   text-align: center;
@@ -61,15 +62,18 @@
   flex-direction: row;
 }
 .home-navlink {
+  font-family: verdana;
   font-size: 32px;
   text-decoration: none;
 }
 .home-navlink1 {
+  font-family: verdana;
   font-size: 32px;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;
 }
 .home-navlink2 {
+  font-family: verdana;
   font-size: 32px;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;

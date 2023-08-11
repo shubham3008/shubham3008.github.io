@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Dataset - Redacted Dataset</title>
+    <title> Face Redacted Dataset</title>
     <meta property="og:title" content="Dataset - Redacted Dataset" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
@@ -27,8 +27,35 @@
         background-color: var(--dl-color-scheme-white);
 
       }
+
+      
     </style>
-    <link
+    <style>
+      a.start_link:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a.start_link:visited {
+        color: pink;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a.start_link:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      
+      a.start_link:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      </style>
+  <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
       data-tag="font"
@@ -43,9 +70,55 @@
       background-color: #fff
       }
     </style>
+    <style>
+      .collapsible {
+        cursor: pointer;
+        user-select: none;
+      }
+    
+      .content {
+        display: none;
+        overflow: hidden;
+      }
+    
+      .collapsed .content {
+        display: none;
+      }
+    
+      .collapsed::after {
+        content: "+";
+      }
+    
+      .expanded::after {
+        content: "-";
+      }
+    </style>
+    
+    <style>
+
+      .dataset-blog-cards-container{
+        margin-top: 20px;
+        align-items: center;
+        /* align-self:center */
+      }
+      .video-container {
+          *font-size: 20px;
+          align-items: center;
+          margin-bottom: 80px;
+          margin-right: 3%;
+        }
+      .video-description {
+        text-align: center;
+        font-size: larger;
+      }
+      .dataset-text09 {
+        font-size: 30px;
+      }
+    </style>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    
     <div>
       <link href="./dataset.css" rel="stylesheet" />
 
@@ -151,6 +224,9 @@
           </header>
         </div>
         <div class="dataset-about section-container">
+          
+    
+          
           <div class="dataset-max-width1 max-content-container">
             <div class="dataset-text-container">
               <h2 class="dataset-text08">Dataset Description</h2>
@@ -158,123 +234,144 @@
           </div>
           <span class="dataset-text09">
             <span class="dataset-text10">
-              We have answered a few common questions below
+             Click to expand questions for answers.
             </span>
             <br class="dataset-text11" />
             <br />
+            <h2 class="collapsible">
             <span class="Heading2">How was the dataset collected?</span>
-            <br class="Heading2" />
-            <span class="dataset-text15 Heading2">
-              This data was collected under the START (Screening Tools for
-              Autism Risk using Technology) Initiative. An app was developed
-              under the same name which helped non-specialists in autism
-              diagnosis. A total of 131 children from ages 2-7 from the low
-              resources settings in the Delhi-NCR region were observed. Of them,
-              48 were diagnosed with Autism Spectrum Disorder, 43 with
-              Intellectual Disabilities and the rest were typically developing.
-              The primary reason for gathering these videos was a Preferential
-              Looking Task conducted as part of the assessment. The purpose of
-              this task was to capture gaze location of the candidates in
-              response to the stimuli from the app as an indication of their
-              social preference.
+            </h2>
+            <div class="content">
+              <p>
+                This data was collected under the <a target="_blank" class= "start_link" href="https://www.startproject.bhismalab.org/">START (Screening Tools for
+                  Autism Risk using Technology)</a> project. An app was developed
+                which helped non-specialists in autism
+                screening. A total of 131 children from ages 2-7 from the low
+                resources settings in the Delhi-NCR region were observed. Of them,
+                48 were diagnosed with Autism Spectrum Disorder, 43 with
+                Intellectual Disabilities and the rest were typically developing.
+                One of the  reasons to collect these videos was a Preferential
+                Looking Task conducted as part of the assessment. The purpose of
+                this task is to capture gaze location of the candidates in
+                response to the stimuli from the app as an indication of their
+                social preference.
+              </p>
+            </div>
+            <h2 class="collapsible">
+              <span class="Heading2">What does it contain?</span>
+              </h2>
+              <div class="content">
+                <p>
+                  <span class="dataset-text22">You will find videos of
+                  each of the following types (see example below) for
+                  about ~110+ children. In addition there are links to
+                  helper scripts and links to code (see usage
+                  example) </span>  
+		  <br>
+                  <span class="dataset-text27"> Example videos</span>
+                  <br class="dataset-text28" />
+                  <br />
+                  <br>
+                  <br>
+                  <br>
+                  <div class="dataset-blog-cards-container">
+                    <div class="video-container">
+                      <video autoplay muted loop src="public/akshat_video.mp4" class="dataset-video"></video>
+                      <div class="video-description">
+                        <span class="dataset-text-heading">1. Original Video without redaction</span>
+                      </div>
+                    </div>
+                    
+                    <div class="video-container">
+                      <video autoplay muted loop src="public/akshat_video_landmarks_blurface (video-converter.com).mp4" class="dataset-video1"></video>
+                      <div class="video-description">
+                        <span class="dataset-text-heading">2. Video with faces blurred</span>
+                      </div>
+                    </div>
+                    
+                    <div class="video-container">
+                      <video autoplay muted loop src="public/akshat_video_landmarks_black (video-converter.com).mp4" class="dataset-video2"></video>
+                      <div class="video-description">
+                        <span class="dataset-text-heading">3. Faces replaced by their face landmarks</span>
+                      </div>
+                    </div>
+                    
+                    <div class="video-container">
+                      <video autoplay muted loop src="public/akshat_video_landmarks_eye_overlay (video-converter.com).mp4" class="dataset-video3"></video>
+                      <div class="video-description">
+                        <span class="dataset-text-heading">4. Face landmarks overlayed with eyes</span>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                </p>
+              </div>
+              <h2 class="collapsible">
+                <span class="Heading2">How can use this dataset?</span>
+                </h2>
+                <div class="content">
+                  <p>
+                    <span>
+                      1. You can use just the video of type 3 above (no scripts, no eye overlay) for your
+                      tasks (e.g. emotion detection). The data 
+                      functions as a data repository.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      2. The same data  as above, with eyes with some metadata (e.g. gender prediction).
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      3. Script to redact videos provided a third party has a separate face
+                      detector bounding box for his/her own videos.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      4. Our tool to create bounding boxes (multiple bounding boxes) which
+                      works in "difficult environment" such as Indian "chawl"
+                      conditions, poor lighting, low res, multiple humans (such as
+                      caregiver hovering around the child) and so on.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      5. A "neural network model" which when provided with a "face" or a
+                      "redacted face", can then be used to classify gaze into left and
+                      right. The model is accompanied by the code that needs to be run.
+                  </span>
+                 
+                  </p>
+                </div>
+                <br />
+                <br />
+                <span class="dataset-text59">*</span>
+                <span class="dataset-text60">
+                  Any version will require the acceptance of a  license  as per the
+                  funding sponsor from the UK.
             </span>
-            <br class="dataset-text16" />
-            <br class="dataset-text17" />
-            <br class="dataset-text18" />
-            <br class="dataset-text19" />
-            <span class="Heading2">What does it contain?</span>
-            <br class="Heading2" />
-            <span class="dataset-text22">Data!</span>
-            <br class="dataset-text23" />
-            <br />
-            <br class="dataset-text25" />
-            <br />
-            <span class="dataset-text27">FIrst See these example videos!</span>
-            <br class="dataset-text28" />
-            <br />
-            <span></span>
-            <span></span>
-          </span>
-          <div class="dataset-blog-cards-container">
-            <video autoplay muted loop
-              src="public/akshat_video.mp4"
-              class="dataset-video"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_blurface (video-converter.com).mp4"
-              class="dataset-video1"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_black (video-converter.com).mp4"
-              class="dataset-video2"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_eye_overlay (video-converter.com).mp4"
-              class="dataset-video3"
-            ></video>
-          </div>
-          <span class="dataset-text32">
-            <span class="dataset-text33">
-              Video Description (Left to Right)
-            </span>
-            <br class="dataset-text34" />
-            <br />
-            <span>1. Original Video without redaction</span>
-            <br />
-            <span>2. Video with faces blurred</span>
-            <br />
-            <span>3. Faces replaced by their face landmarks</span>
-            <br />
-            <span>4. Face landmarks overlayed with eyes on top</span>
-            <br />
-          </span>
-          <span class="dataset-text44">
-            <span>
-              1. You can use just the videos (no scripts, no eye overlay) for your
-              tasks tasks (e.g. emotion detection) by a third party. It then
-              functions as a data repository.
-            </span>
-            <br />
-            <br />
-            <span>
-              2. Same data with eyes with some metadata (e.g. gender prediction)
-            </span>
-            <br />
-            <br />
-            <span>
-              3. Script to redact videos provided a third party has a separate face
-              detector bounding box for his/her own videos.
-            </span>
-            <br />
-            <br />
-            <span>
-              4. Our tool to create bounding boxes (multiple bounding boxes) which
-              works in "difficult environment" such as Indian "chawl"
-              conditions, poor lighting, low res, multiple humans (such as
-              caregiver hovering around the child) and so on.
-            </span>
-            <br />
-            <br />
-            <span>
-              5. A "neural network model" which when provided with a "face" or a
-              "redacted face", can then be used to classify gaze into left and
-              right. The model is accompanied by the code that needs to be run.
-              Each version will require a “license” acceptance as per the
-              funding sponsor from the UK
-            </span>
-            <br />
-            <br />
-            <span class="dataset-text59">*</span>
-            <span class="dataset-text60">
-              Each version will require a “license” acceptance as per the
-              funding sponsor from the UK
-            </span>
-            <span></span>
-            <br />
           </span>
         </div>
       </div>
     </div>
+    <script>
+      // Add event listeners to the collapsible headings
+      var collapsibles = document.getElementsByClassName("collapsible");
+      for (var i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener("click", function () {
+          this.classList.toggle("collapsed");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
     <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
     <script>
       window.onload = () => {
@@ -363,5 +460,6 @@
         runAllScripts();
       };
     </script>
+
   </body>
 </html>

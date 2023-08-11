@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Redacted Dataset</title>
+    
+    <title>Face Redacted Dataset</title>
     <meta property="og:title" content="Redacted Dataset" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
@@ -28,16 +29,85 @@
 
       }
     </style>
+    <style>
+
+     
+      .video-container {
+          align-items: center;
+          margin-bottom: 80px;
+          margin-right: 20px;
+        }
+      .video-description {
+        text-align: center;
+        font-size: larger;
+      }
+
+      .scroll-indicator {
+            position: fixed;
+            bottom: 5%;
+            right:1.5%;
+            /* transform: translateX(-50%); */
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.05s;
+            z-index:10;
+        }
+          
+        
+        .scroll-indicator.hidden {
+            opacity: 0;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+            color:Red;
+        }
+        
+        .scroll-indicator i {
+            display: block;
+            font-size: 24px;
+            color: gray;
+            margin-bottom: 5px;
+        }
+        
+
+    </style>
+    <style>
+
+      .dataset-blog-cards-container{
+        margin-top: 20px;
+        align-items: center;
+        /* align-self:center */
+      }
+      .video-container {
+          *font-size: 20px;
+          align-items: center;
+          margin-bottom: 80px;
+          margin-right: 3%;
+        }
+      .video-description {
+        text-align: center;
+        font-size: larger;
+      }
+      .dataset-text09 {
+        font-size: 30px;
+      }
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
       data-tag="font"
     />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&amp;display=swap"
       data-tag="font"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <style>
       .services-card:hover > div{
       background-color: #fff
@@ -46,11 +116,55 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="scrollIndicator" class="scroll-indicator">
+      <span>&#8964; </span>
+      <span>Scroll To</span>
+      <span>End</span>
+    </div>
+    
+     <!-- Add the FontAwesome library for the chevron icon -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fuelux/2.6.6/all.min.js"></script>
+     <script>
+         // Get the scroll indicator element
+         const scrollIndicator = document.getElementById('scrollIndicator');
+         
+         // Function to handle scroll event
+         function handleScroll() {
+             // Calculate the scroll position
+             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+             
+             // Calculate the height of the viewport
+             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+             
+             // Calculate the height of the document
+             const documentHeight = Math.max(
+                 document.body.scrollHeight,
+                 document.body.offsetHeight,
+                 document.documentElement.clientHeight,
+                 document.documentElement.scrollHeight,
+                 document.documentElement.offsetHeight
+             );
+             
+             // Calculate the scroll position to trigger hiding the indicator
+             const hidePosition = documentHeight - viewportHeight;
+             
+             // Hide the scroll indicator if the user has scrolled down completely
+             if (scrollPosition >= hidePosition) {
+                 scrollIndicator.classList.add('hidden');
+             } else {
+                 scrollIndicator.classList.remove('hidden');
+             }
+         }
+         
+         // Attach the scroll event listener
+         window.addEventListener('scroll', handleScroll);
+     </script>
+
     <div>
       <link href="./home.css" rel="stylesheet" />
 
       <div class="home-container">
-        <main class="home-main">
+        <!-- <main class="home-main"> -->
           <div class="home-hero section-container">
             <div class="home-max-width max-content-container">
               <div class="home-heading-container">
@@ -70,7 +184,7 @@
                   data-role="Nav"
                   class="home-nav"
                 >
-                  <a href="index.html" class="home-navlink">Why Redaction?</a>
+                  <a href="index.html" class="home-navlink">Redaction?</a>
                   <a href="dataset.html" class="home-navlink1">Dataset</a>
                   <a href="download.html" class="home-navlink2">Download</a>
                 </nav>
@@ -147,59 +261,61 @@
           </div>
           <div class="home-portofolio section-container">
             <div class="home-text-container">
-              <h2 class="home-text08 Heading2">Why Redaction?</h2>
+              <h2 class="home-text08 Heading2">What is Redaction? And Why?</h2>
             </div>
-          </div>
-          <div class="home-about section-container">
-            <img
-              alt="image"
-              src="public/external/redact_image-1200w.png"
-              class="home-image1"
-            />
-            <img
-                src="public/kid.png"
-                class="home-video"
-            ></img>
           </div>
           <div class="home-blog section-container">
             <h2 class="home-text09 Heading2">
-              Sample Videos and Their Redacted Versions
+              Sample Video and Automated Redacted Versions
             </h2>
             <div class="home-blog-cards-container">
-            <video autoplay muted loop
-              src="public/akshat_video.mp4"
-              class="home-video1"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_blurface (video-converter.com).mp4"
-              class="home-video1"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_black (video-converter.com).mp4"
-              class="home-video2"
-            ></video>
-            <video autoplay muted loop
-              src="public/akshat_video_landmarks_eye_overlay (video-converter.com).mp4"
-              class="home-video3"
-            ></video>
+              <div class="video-container">
+                <video autoplay muted loop src="public/akshat_video.mp4" class="home-video1"></video>
+                <div class="video-description">
+                  <span class="home-text-heading">1. Source Video </span>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <video autoplay muted loop src="public/akshat_video_landmarks_blurface (video-converter.com).mp4" class="home-video1"></video>
+                <div class="video-description">
+                  <span class="home-text-heading">2. Redacted Video (face blurred)</span>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <video autoplay muted loop src="public/akshat_video_landmarks_black (video-converter.com).mp4" class="home-video2"></video>
+                <div class="video-description">
+                  <span class="home-text-heading">3. Redacted Video (prominent landmarks)</span>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <video autoplay muted loop src="public/akshat_video_landmarks_eye_overlay (video-converter.com).mp4" class="home-video3"></video>
+                <div class="video-description">
+                  <span class="home-text-heading">4. Redacted Video (landmarks overlayed with eyes)</span>
+                </div>
+              </div>
+
             </div>
-            <span class="home-text10">
-              <span class="home-text11">Video Description (Left to Right)</span>
-              <br />
-              <br />
-              <span>1. Original Video without redaction</span>
-              <br />
-              <span>2. Video with faces blurred</span>
-              <br />
-              <span>3. Faces replaced by their face landmarks</span>
-              <br />
-              <span>4. Face landmarks overlayed with eyes on top</span>
-              <br />
-            </span>
           </div>
-        </main>
+          <div class="home-about section-container">
+            <!-- <img
+              alt="image"
+              src="public/external/redact_image-1200w.png"
+              class="home-image1"
+            /> -->
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRaDehHi6eeqZPrBRxBel_LZudYSAMnvscB24AB5FsNPFzadi2UaR9mRrYqRGiVmvAr5PGkVCX4JicR/embed?start=false&loop=true&delayms=2000&rm=minimal" frameborder="5" width="1510" height="848" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+            <!-- <img
+                src="public/kid.png"
+                class="home-video"
+            ></img> -->
+          </div>
+        <!-- </main> -->
       </div>
     </div>
+
     <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
     <script>
       window.onload = () => {

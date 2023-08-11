@@ -25,6 +25,7 @@
   justify-content: center;
 }
 .dataset-text {
+  font-family:verdana;
   width: 1272px;
   font-size: 4em;
   text-align: center;
@@ -52,16 +53,19 @@
   flex-direction: row;
 }
 .dataset-navlink {
+  font-family: verdana;
   font-size: 32px;
   text-decoration: none;
 }
 .dataset-navlink1 {
+  font-family: verdana;
   font-size: 32px;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;
 }
 .dataset-navlink2 {
   font-size: 32px;
+  font-family: verdana;
   margin-left: var(--dl-space-space-twounits);
   text-decoration: none;
 }
@@ -173,7 +177,7 @@
   height: var(--dl-size-size-xsmall);
 }
 .dataset-about {
-  height: 2241px;
+  height: 100%;
   padding-top: var(--dl-space-space-threeunits);
   padding-bottom: var(--dl-space-space-threeunits);
   background-color: var(--dl-color-scheme-lightbrown);
