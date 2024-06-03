@@ -1,0 +1,3 @@
+[submodule "simplifying-brdf-acquisition"]
+	path = simplifying-brdf-acquisition
+	url = ./simplifying-brdf-acquisition
